@@ -18,9 +18,8 @@ cudaDetected = torch.cuda.is_available()
 print(f"torch sees cuda: {cudaDetected}")
 if cudaDetected:
     cudaDeviceCt = torch.cuda.device_count()
-for i in range(cudaDeviceCt):
-    print(f"cuda device[{i}]: {torch.cuda.get_device_name(i)}")
-
+    for i in range(cudaDeviceCt):
+        print(f"cuda device[{i}]: {torch.cuda.get_device_name(i)}")
 
 @st.cache(allow_output_mutation=True)
 def initializeSummarizer():
