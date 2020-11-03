@@ -1,11 +1,4 @@
-## Apps based upon HuggingFace API
-
-### Contents
-
-* [Summarization](#summarization)
-* []()
-
-### Summarization
+## *NY Times* Article Summarizer
 
 Applies Facebook's BART model, as implemented by HuggingFace, to summarize articles from the NY Times.
 
