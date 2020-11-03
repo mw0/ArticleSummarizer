@@ -1,0 +1,14 @@
+*~
+#.gitignore#
+#.gitignore
+__pycache__/
+*/__pycache__/
+*/.ipynb_checkpoints
+*/HTML
+data/fakeRealNews.zip
+nohup.out
+python/nohup.out
+T5summarize
+*.svg
+pdf
+.ipynb_checkpoints
