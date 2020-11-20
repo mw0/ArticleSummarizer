@@ -111,8 +111,8 @@ st.sidebar.info(
 )
 
 st.sidebar.header("Set summarization output range (words)")
-minLength = st.sidebar.slider("min. word count", 25, 310, 240)
-maxLength = st.sidebar.slider("max. word count", 45, 360, 280)
+minLength = st.sidebar.slider("min. word count", 25, 310, 180)
+maxLength = st.sidebar.slider("max. word count", 45, 360, 230)
 st.sidebar.header("Article truncation size (words)")
 truncateWords = st.sidebar.slider("truncate size", 300, 720, 720)
 
