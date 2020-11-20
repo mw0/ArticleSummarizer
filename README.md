@@ -1,6 +1,6 @@
 ## *NY Times* Article Summarizer
 
-Applies Facebook's BART model, as implemented by HuggingFace, to summarize articles from the NY Times.
+Applies Facebook's BART model [[Lewis et al.,2020]](https://scontent-sea1-1.xx.fbcdn.net/v/t39.8562-6/106373513_3414102562251474_8005430471454563564_n.pdf?_nc_cat=105&ccb=2&_nc_sid=ae5e01&_nc_ohc=lV9llJ8AqhAAX8tDSOA&_nc_ht=scontent-sea1-1.xx&oh=cd7f9e0463fd070a899730fc5a98724b&oe=5FDF7984), as implemented by HuggingFace, to summarize articles from the NY Times.
 
 <table>
 <tr valign="top">
@@ -14,11 +14,11 @@ Applies Facebook's BART model, as implemented by HuggingFace, to summarize artic
   * article is truncated to 720 words maximum<sup>&dagger;</sup>
   * applies Bart summarizer model
   * displays summary, full article, profiling info
-* Streamlit's caching capabilities obviate repeating steps &mdash; e.g., fetching and extracting text from an article already parsed
+* Streamlit's caching capabilities obviate repeating steps &mdash; e.g., initializing the model, fetching and extracting text from an article already parsed
 
 <sup>&dagger;</sup>Summarizer can fail if text is too long.
 
-See [streamlitSummarizer.py](https://github.com/mw0/MLnotebooks/blob/master/HuggingFace/python/streamlitSummarizer.py) for source code.
+See [streamlitSummarizer.py](https://github.com/mw0/ArticleSummarizer/blob/master/python/streamlitSummarizer.py) for source code.
 </td><td width="700"><img src="SummarizerAppScreenshot1.png" width="700" height="1215"</td>
 </tr>
 </table>
