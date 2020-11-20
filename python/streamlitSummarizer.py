@@ -107,7 +107,7 @@ st.sidebar.info(
     "The actual summarization time takes a few seconds, although"
     " increasing the summary length will extend this.\n"
     "\nFor additional information, see the "
-    "[README.md](https://github.com/mw0/MLnotebooks/tree/master/HuggingFace)."
+    "[README.md](https://github.com/mw0/ArticleSummarizer)."
 )
 
 st.sidebar.header("Set summarization output range (words)")
