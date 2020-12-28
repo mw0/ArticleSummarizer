@@ -46,6 +46,7 @@ def fetchTop5TitlesURLs():
 
 @st.cache(suppress_st_warning=True)
 def getArticle(URLs, title):
+    print(f"URLs: {URLs}\ntitle: {title}")
     return requests.get(URLs[title])
 
 
@@ -151,6 +152,7 @@ print(len(toSummarize))
 
 st.title("Summary")
 t8 = perf_counter()
+print(f"minLength: {minLength}")
 summary = summarizeArticle(toSummarize, minLength, maxLength)
 st.write(summary)
 t9 = perf_counter()
