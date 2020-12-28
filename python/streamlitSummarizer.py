@@ -46,7 +46,7 @@ def fetchTop5TitlesURLs():
 
 @st.cache(suppress_st_warning=True)
 def getArticle(URLs, title):
-    print(f"URLs: {URLs}\ntitle: {title}")
+    print(f"title: {title}\nURL: {URLs[title]}")
     return requests.get(URLs[title])
 
 
