@@ -128,6 +128,7 @@ st.write(f"You selected: *{title}*, {URLs[title]}")
 
 t4 = perf_counter()
 all = getArticle(URLs, title)
+print(all[:2000])
 t5 = perf_counter()
 Δt45 = t5 - t4
 
