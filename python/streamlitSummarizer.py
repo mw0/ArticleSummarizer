@@ -151,6 +151,7 @@ print(len(toSummarize))
 
 st.title("Summary")
 t8 = perf_counter()
+print(f"minLength: {minLength}")
 summary = summarizeArticle(toSummarize, minLength, maxLength)
 st.write(summary)
 t9 = perf_counter()
