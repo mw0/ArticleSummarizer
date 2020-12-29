@@ -137,6 +137,9 @@ print(f"Δt to fetch article: {Δt45:5.2f}s", flush=True)
 if request.status_code != 200:
     print("\n!!! OH NO !!!\n getArticle returned status code:"
           f" {request.status_code}", flush=True)
+else:
+    print(f"1st 500 characters of URL\n{request.text[:500]}", flush=True)
+    print(f"last 500 characters of URL\n{request.text[-500:]}", flush=True)
 
 t6 = perf_counter()
 story = soupifyArticle(request)
