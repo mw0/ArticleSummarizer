@@ -129,7 +129,6 @@ st.write(f"You selected: *{title}*, {URLs[title]}")
 
 t4 = perf_counter()
 all = getArticle(URLs, title)
-print("help(all):\n", help(all))
 t5 = perf_counter()
 Δt45 = t5 - t4
 
