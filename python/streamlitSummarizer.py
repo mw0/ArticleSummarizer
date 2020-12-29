@@ -96,6 +96,7 @@ t0 = perf_counter()
 summarizer = initializeSummarizer()
 t1 = perf_counter()
 Δt01 = t1 - t0
+print(f"Δt to initialize summarizer: {Δt01:5.2f}s")
 
 # Now for the Streamlit interface:
 
@@ -123,6 +124,7 @@ t2 = perf_counter()
 titles, URLs, latest = fetchTop5TitlesURLs()
 t3 = perf_counter()
 Δt23 = t3 - t2
+print(f"Δt to fetch top 5 article metadata: {Δt23:5.2f}s")
 
 title = st.sidebar.selectbox(f"at {latest}", titles)
 st.write(f"You selected: *{title}*, {URLs[title]}")
@@ -131,11 +133,13 @@ t4 = perf_counter()
 all = getArticle(URLs, title)
 t5 = perf_counter()
 Δt45 = t5 - t4
+print(f"Δt to fetch article: {Δt45:5.2f}s")
 
 t6 = perf_counter()
 story = soupifyArticle(all)
 t7 = perf_counter()
 Δt67 = t7 - t6
+print(f"Δt to soupify article: {Δt67:5.2f}s")
 
 userText = "\n\n".join(story)
 print(f"len(userText): {len(userText)}")
@@ -156,18 +160,13 @@ summary = summarizeArticle(toSummarize, minLength, maxLength)
 st.write(summary)
 t9 = perf_counter()
 Δt89 = t9 - t8
+print(f"Δt to summarize article: {Δt89:5.2f}s")
 
 t10 = perf_counter()
 st.title("Full article")
 st.write(userText)
 t11 = perf_counter()
 Δt10 = t11 - t10
-
-print(f"Δt to fetch top 5 article meta: {Δt01:5.2f}s")
-print(f"Δt to generate sidebar dropdown: {Δt23:5.2f}s")
-print(f"Δt to fetch article: {Δt45:5.2f}s")
-print(f"Δt to soupify article: {Δt67:5.2f}s")
-print(f"Δt to summarize article: {Δt89:5.2f}s")
 print(f"Δt to write article: {Δt10:5.2f}s")
 
 if not st.sidebar.button("Hide profiling information"):
