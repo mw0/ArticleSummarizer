@@ -51,8 +51,8 @@ def getArticle(URLs, title):
 
 
 @st.cache(suppress_st_warning=True)
-def soupifyArticle(all):
-    doc = BeautifulSoup(all.text, "html.parser")
+def soupifyArticle(request):
+    doc = BeautifulSoup(request.text, "html.parser")
     soup = doc.findAll("p", {"class", "css-158dogj evys1bk0"})
 
     story = []
@@ -64,18 +64,18 @@ def soupifyArticle(all):
     return story
 
 
-@st.cache(suppress_st_warning=True)
-def soupifyArticle(all):
-    doc = BeautifulSoup(all.text, "html.parser")
-    soup = doc.findAll("p", {"class", "css-158dogj evys1bk0"})
+# @st.cache(suppress_st_warning=True)
+# def soupifyArticle(request):
+#     doc = BeautifulSoup(request.text, "html.parser")
+#     soup = doc.findAll("p", {"class", "css-158dogj evys1bk0"})
 
-    story = []
-    for paraSoup in soup:
-        paragraph = " ".join(paraSoup.text.split()) + "\n"
-        print(paragraph, flush=True)
-        story.append(paragraph)
+#     story = []
+#     for paraSoup in soup:
+#         paragraph = " ".join(paraSoup.text.split()) + "\n"
+#         print(paragraph, flush=True)
+#         story.append(paragraph)
 
-    return story
+#     return story
 
 
 @st.cache(suppress_st_warning=True)
@@ -130,13 +130,16 @@ title = st.sidebar.selectbox(f"at {latest}", titles)
 st.write(f"You selected: *{title}*, {URLs[title]}")
 
 t4 = perf_counter()
-all = getArticle(URLs, title)
+request = getArticle(URLs, title)
 t5 = perf_counter()
 Δt45 = t5 - t4
 print(f"Δt to fetch article: {Δt45:5.2f}s", flush=True)
+if request.status_code != 200:
+    print("\n!!! OH NO !!!\n getArticle returned status code:"
+          f" {request.status_code}", flush=True)
 
 t6 = perf_counter()
-story = soupifyArticle(all)
+story = soupifyArticle(request)
 t7 = perf_counter()
 Δt67 = t7 - t6
 print(f"Δt to soupify article: {Δt67:5.2f}s", flush=True)
