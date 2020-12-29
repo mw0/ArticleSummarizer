@@ -53,7 +53,8 @@ def getArticle(URLs, title):
 @st.cache(suppress_st_warning=True)
 def soupifyArticle(request):
     doc = BeautifulSoup(request.text, "html.parser")
-    soup = doc.findAll("p", {"class", "css-158dogj evys1bk0"})
+    # soup = doc.findAll("p", {"class", "css-158dogj evys1bk0"})
+    soup = doc.findAll("p", {"class", "css-axufdj evys1bk0"})
 
     story = []
     for paraSoup in soup:
