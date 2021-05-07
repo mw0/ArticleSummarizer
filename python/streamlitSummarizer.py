@@ -6,7 +6,6 @@ import bs4
 import requests
 import streamlit as st
 import datetime
-from os import environ
 from time import perf_counter
 
 from pynytimes import NYTAPI
@@ -87,7 +86,8 @@ def summarizeArticle(toSummarize, minLength, maxLength):
 
 # NY Times API
 
-NYTimesAPIkey = environ.get("NYTimesAPIkey")
+# NYTimesAPIkey = environ.get("NYTimesAPIkey")
+NYTimesAPIkey = st.secrets["NYTimesAPIkey"]
 if NYTimesAPIkey is None:
     raise KeyError("'NYTimesAPIkey' not an environment variable name.")
 
