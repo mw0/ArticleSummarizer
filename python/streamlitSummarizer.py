@@ -87,8 +87,8 @@ def summarizeArticle(toSummarize, minLength, maxLength):
 # NY Times API
 
 # NYTimesAPIkey = environ.get("NYTimesAPIkey")
-if NYTimesAPIkey is None:
-    raise KeyError("'NYTimesAPIkey' not an environment variable name.")
+# if NYTimesAPIkey is None:
+#     raise KeyError("'NYTimesAPIkey' not an environment variable name.")
 
 # nyt = NYTAPI(NYTimesAPIkey)
 nyt = NYTAPI(st.secrets["NYTimesAPIkey"])
