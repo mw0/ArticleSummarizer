@@ -12,3 +12,4 @@ T5summarize
 *.svg
 pdf
 .ipynb_checkpoints
+.streamlit

@@ -2,4 +2,4 @@ nohup streamlit run /home/$(echo $USER)/work/ArticleSummarizer/python/streamlitS
 
 TESTING:
 
-streamlit run /home/$(echo $USER)/work/ArticleSummarizer/python/streamlitSummarizerV2.py --server.port 8503 &
+streamlit run /home/$(echo $USER)/work/ArticleSummarizer/python/streamlitSummarizerV2.py --server.port 8504 &
